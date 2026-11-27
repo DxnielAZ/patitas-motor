@@ -1,6 +1,6 @@
 # Bitácora – Patitas Motor
 
-## MiniReto 1 – Nodos
+##  Nodos
 
 ```text
 cabeza
@@ -10,7 +10,7 @@ cabeza
 
 Al asignar `null` a `cabeza.siguiente`, el recorrido termina después de la primera atención. Las otras dos dejan de ser alcanzables desde la cabeza, aunque todavía existan referencias a ellas en las variables originales.
 
-## MiniReto 2 – Inserciones (diagramas previos)
+##  Inserciones
 
 ```text
 Agregar al final de una lista vacía
@@ -42,7 +42,7 @@ Antes: cabeza → [A] → ... → [Z] → null (cola = Z)
 Después: cabeza → [N] → [A] → ... → [Z] → null (cola = Z)
 ```
 
-## MiniReto 3 – Eliminación (diagramas previos)
+## Eliminación 
 
 ```text
 Eliminar la cabeza
@@ -58,7 +58,7 @@ Antes: cabeza → [A] → [B] → [C] → null (cola = C)
 Después: cabeza → [A] → [B] → null (cola = B)
 ```
 
-### Complejidad de la lista (MiniRetos 2 y 3)
+### Complejidad de la lista 
 
 | Método | Tiempo | Explicación |
 |---|---|---|
@@ -69,7 +69,7 @@ Después: cabeza → [A] → [B] → null (cola = B)
 
 Eliminar la cola requiere encontrar el nodo anterior porque los enlaces solamente apuntan hacia adelante.
 
-## MiniReto 4 – Comparación
+##  Comparación
 
 | Operación | Lista enlazada | Arreglo |
 |---|---|---|
@@ -79,7 +79,7 @@ Eliminar la cola requiere encontrar el nodo anterior porque los enlaces solament
 | Buscar | O(n) | O(n) |
 | Eliminar la primera | O(1) | O(n) |
 
-## MiniReto 5 – Cola
+## Cola
 
 ```text
 Encolar Lola: frente = final → [Lola] → null
@@ -88,7 +88,7 @@ Encolar Mía: frente → [Lola] → [Toby] → [Mía] → null (final = Mía)
 Desencolar: sale Lola; frente → [Toby] → [Mía] → null (final = Mía)
 ```
 
-## MiniReto 6 – Cálculo manual de la mañana
+## Cálculo manual de la mañana
 
 Se registra toda llegada que ocurre hasta el momento de liberar el consultorio, incluyendo las simultáneas. Una atención ya iniciada no se interrumpe.
 
@@ -105,7 +105,7 @@ Se registra toda llegada que ocurre hasta el momento de liberar el consultorio, 
 Urgencias: (10 + 15 + 0) / 3 = 8,33 minutos.
 Generales: (0 + 75 + 80 + 80) / 4 = 58,75 minutos.
 
-### MiniReto 5 – Medición y complejidades
+###  Medición y complejidades
 
 Medición de 100.000 turnos con `console.time`, Node.js v22.16.0, en el entorno de ejecución de ChatGPT. Los datos de prueba se generan antes de medir.
 
@@ -124,11 +124,11 @@ Medición de 100.000 turnos con `console.time`, Node.js v22.16.0, en el entorno 
 
 La cola cambia sus referencias directamente; `shift()` desplaza los elementos restantes. Por eso vaciar n elementos con shift tiene costo cuadrático, mientras que con la cola es lineal. Los tiempos pueden variar según el equipo y la ejecución. Los cinco turnos de prueba salieron en el orden de llegada; al vaciar la cola, frente y final quedaron en null.
 
-### MiniReto 6 – Comparación con el programa
+### Comparación con el programa
 
 El orden, las horas y las esperas de la simulación coinciden con el cálculo manual. No fue necesario documentar un error de discrepancia. Registrar las llegadas antes de seleccionar el siguiente turno permite atender a Rocky a las 9:00.
 
-## MiniReto 7 – Pila y editor
+## Pila y editor
 
 Se eligió una pila con nodos porque permite apilar y desapilar modificando el tope, sin recorrer ni desplazar elementos. Todas sus operaciones son O(1).
 
@@ -147,7 +147,7 @@ En la tabla, + representa agregar y − representa eliminar. Las pilas se muestr
 
 La prueba confirmó los ocho estados. El editor guarda la posición original de una atención para restaurarla en el mismo lugar. Una acción nueva efectiva elimina la posibilidad de rehacer las acciones anteriores.
 
-## MiniReto 8 – Integración
+## Integración
 
 | Estructura | Principio | Uso en Patitas | Complejidad principal |
 |---|---|---|---|
